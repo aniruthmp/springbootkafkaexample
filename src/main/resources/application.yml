@@ -15,4 +15,8 @@ spring:
           resetOffsets: true
 
 server:
-  port: 4345
+  port: 8080
+
+management:
+  security:
+    enabled: false
