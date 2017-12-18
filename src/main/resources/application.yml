@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        output:
+          destination: timerTopic
+          content-type: application/json
+        input:
+          destination: timerTopic
+          content-type: application/json
+          group: timerGroup
+          resetOffsets: true
+
+server:
+  port: 4345
