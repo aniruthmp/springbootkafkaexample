@@ -6,12 +6,12 @@ spring:
           brokers: localhost:9092
       bindings:
         output:
-          destination: timerTopic
+          destination: testTopic
           content-type: application/json
         input:
-          destination: timerTopic
+          destination: testTopic
           content-type: application/json
-          group: timerGroup
+          group: testGroup
           resetOffsets: true
 
 server:
