@@ -28,6 +28,10 @@ public class PublisherConfig {
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        configProps.put("security.protocol", "SASL_SSL");
+        configProps.put("sasl.mechanism", "PLAIN");
+        configProps.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"E2GR7EDXS3YSCS5Q\" password=\"Kk6jUtbqJWF8suo2ksBQ1d5QaaFUlZ+Rgtn4xDq43O/c3keKb4yOrqBHqde2hVzE\";");
+        configProps.put("ssl.endpoint.identification.algorithm", "https");
         return new DefaultKafkaProducerFactory<>(configProps);
     }
 

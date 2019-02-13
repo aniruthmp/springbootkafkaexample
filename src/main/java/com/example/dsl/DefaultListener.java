@@ -18,7 +18,7 @@ public class DefaultListener {
     @KafkaListener(id = "${spring.cloud.stream.bindings.input.group}",
             topics = "${spring.cloud.stream.bindings.input.destination}")
     public void onMessage(String message) {
-        log.info("received message='{}'", message);
+        System.out.println("received message= "+ message);
         latch.countDown();
     }
 

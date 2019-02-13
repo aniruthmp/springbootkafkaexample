@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @Slf4j
 public class KafkaController {
@@ -25,7 +26,7 @@ public class KafkaController {
     public ResponseEntity<String> vote(@RequestBody String message) {
 
         try {
-            log.info("Sending message: " + message +
+            System.out.println("Sending message: " + message +
                     " to topic: " + topic);
 
             kafkaPublish.sendMessage(topic, message);

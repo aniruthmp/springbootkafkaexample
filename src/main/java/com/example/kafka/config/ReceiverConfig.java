@@ -35,6 +35,10 @@ public class ReceiverConfig {
         props.put(ConsumerConfig.GROUP_ID_CONFIG, GROUP);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        props.put("security.protocol", "SASL_SSL");
+        props.put("sasl.mechanism", "PLAIN");
+        props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"E2GR7EDXS3YSCS5Q\" password=\"Kk6jUtbqJWF8suo2ksBQ1d5QaaFUlZ+Rgtn4xDq43O/c3keKb4yOrqBHqde2hVzE\";");
+        props.put("ssl.endpoint.identification.algorithm", "https");
         return new DefaultKafkaConsumerFactory<>(props);
     }
 

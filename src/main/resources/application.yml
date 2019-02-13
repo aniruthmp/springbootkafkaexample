@@ -3,20 +3,27 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: pkc-epgnk.us-central1.gcp.confluent.cloud:9092
+          configuration:
+            sasl:
+              mechanism: PLAIN
+              jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"E2GR7EDXS3YSCS5Q\" password=\"Kk6jUtbqJWF8suo2ksBQ1d5QaaFUlZ+Rgtn4xDq43O/c3keKb4yOrqBHqde2hVzE\""
+            security.protocol: SASL_SSL
       bindings:
         output:
-          destination: testTopic
+          destination: page_visits
           content-type: application/json
         input:
-          destination: testTopic
+          destination: page_visits
           content-type: application/json
-          group: testGroup
+          group: java_example_group_1
           resetOffsets: true
 
 server:
-  port: 8080
+  port: 9090
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"

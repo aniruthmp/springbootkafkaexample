@@ -22,6 +22,6 @@ public class KafkaPublish {
     public void sendMessage(String topic, String message) {
 
         kafkaTemplate.send(topic, message);
-        log.info("sent message='{}' ", message);
+        System.out.println("sent message= " + message);
     }
 }
