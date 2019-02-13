@@ -7,7 +7,7 @@ spring:
           configuration:
             sasl:
               mechanism: PLAIN
-              jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"E2GR7EDXS3YSCS5Q\" password=\"Kk6jUtbqJWF8suo2ksBQ1d5QaaFUlZ+Rgtn4xDq43O/c3keKb4yOrqBHqde2hVzE\""
+              jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"E2GR7EDXS3YSCS5Q\" password=\"Kk6jUtbqJWF8suo2ksBQ1d5QaaFUlZ+Rgtn4xDq43O/c3keKb4yOrqBHqde2hVzE\";"
             security.protocol: SASL_SSL
       bindings:
         output:
